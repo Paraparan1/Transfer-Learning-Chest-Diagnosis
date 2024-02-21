@@ -6,8 +6,11 @@ In the rapidly advancing domain of medical imaging, chest X-ray diagnosis is par
 The following datasets were used:
 
 Dataset 1 (Pneumonia): https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia 
+
 Dataset 2 (Tuberculosis): https://www.kaggle.com/datasets/tawsifurrahman/tuberculosis-tb-chest-xray-dataset
+
 Dataset 3 (NIH): https://www.kaggle.com/datasets/nih-chest-xrays/data
+
 Dataset 4 (NIH_Balanced): https://www.kaggle.com/datasets/nih-chest-xrays/data
 ______________________________________________________________________________________________________________________
 The dataset loaders featured the code that was used to load in the datasets and pre process the datasets
@@ -21,6 +24,7 @@ Dataset 3 loader: NIH_Data_Loader
 
 Dataset 4 loader: NIH_Class_Balanced_Loader (Subset of Dataset 3 with each class containing 800 images) 
 ______________________________________________________________________________________________________________________
+
 The code files present in the file are seperated into two categories: Used for Dataset 1 and 2 and Used for Dataset 3 
 For no weights the weights has to be changed from weights='imagenet' to weights=None. 
 
@@ -51,7 +55,9 @@ Dataset 2(Tuberculosis) - class_names = ['TUBERCULOSIS','NORMAL']
 For the domain_adapatation the model = load_model(" ") needs to be set with each respective model:
 inceptionv3_Tuberculosis_Kaggle_Model.h5
 xception_pneumonia_Kaggle_Model.h5 
+
 ---------------------------------------------------------------------------------------------------------------------
+
 Fine tuned code:
 
 finetuned_xception_nih - Finetuning on unbalanced data. 
@@ -64,8 +70,11 @@ xception_NIH_Model.h5
 The adaptive learning rate callback was not used for Dataset 3 experiments. 
 
 The following learning rate parameters was tested for Dataset 3: 
+
 0.00001
+
 0.0001
+
 ---------------------------------------------------------------------------------------------------------------------
 
 Complex Architecture - This model contains the xception model with added layers:
